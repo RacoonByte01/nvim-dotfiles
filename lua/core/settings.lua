@@ -18,7 +18,8 @@ vim.opt.scrolloff = 5
 vim.opt.fileencoding = "utf-8"
 vim.opt.termguicolors = true
 
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
+vim.opt.number = true
 vim.opt.cursorline = true
 
 vim.opt.hidden = true
