@@ -1,4 +1,4 @@
-## This is my nvim configuration
+## This is my **old** nvim configuration
 # Plugins
 - Theme
     - Tokionight
