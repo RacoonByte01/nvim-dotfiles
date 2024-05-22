@@ -3,7 +3,7 @@ local wikis = {
   {
     path = vim.fn.expand("~/Documents/life/"), -- Trailing slash here [1]
     diary_template = "diary", -- some executable filter
-    syntax = "markdown", -- or whatever
+    -- syntax = "markdown", -- or whatever
     ext = ".md", -- or whatever
     auto_tags = 1 -- ... or whatever! you do you, friend
   },
