@@ -1,7 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    dependencies = { "folke/neodev.nvim" },
+    dependencies = { "folke/neodev.nvim", "mfussenegger/nvim-jdtls" },
     config = function()
 		-- Setup All language
 		local lsp = require("lspconfig")
@@ -16,7 +16,7 @@ return {
         require("lspconfig.ui.windows").default_options.border = "rounded"
         -- Customization and appearance -----------------------------------------
         -- change gutter diagnostic symbols
-        local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+        local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
         for type, icon in pairs(signs) do
           local hl = "DiagnosticSign" .. type
