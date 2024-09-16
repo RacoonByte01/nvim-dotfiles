@@ -4,7 +4,9 @@ return {
     dependencies = { "folke/neodev.nvim" },
     config = function()
 		-- Setup All language
-		require("lspconfig").lua_ls.setup({})
+		local lsp = require("lspconfig")
+		lsp.lua_ls.setup({})
+		lsp.jdtls.setup({})
 		-- Get info about function
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
         -- Setup neovim lua configuration
