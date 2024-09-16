@@ -1,3 +1,3 @@
 require('core.settings')
-require('core.keybinding')
+require('core.bindings')
 require('.lazy')
