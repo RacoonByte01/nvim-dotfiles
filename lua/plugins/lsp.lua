@@ -7,6 +7,9 @@ return {
 			local lsp = require("lspconfig")
 			lsp.lua_ls.setup({})
 			lsp.jdtls.setup({})
+			lsp.intelephense.setup({
+				cmd = { 'env', 'HOME=/tmp', 'intelephense', '--stdio' };
+			})
 			-- lsp.bashls.setup({})
 			-- Get info about function
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
