@@ -1,4 +1,10 @@
 return {
+	-- TODO: dawdad
+	-- FIX: dawdad
+	-- HACK: dawdad
+	-- PERF: dawdad
+	-- NOTE: dawdad
+	-- TEST: dawdad
 	"folke/todo-comments.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = {
