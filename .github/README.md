@@ -32,12 +32,12 @@
 <table>
 	<tbody>
 		<tr>
-			<td><img src=".github/home.png"></td>
+			<td><img src="home.png"></td>
 			<td><img src=".github/ranger.png"></td>
 		</tr>
 		<tr>
-			<td><img src=".github/hlchunk.png"></td>
-			<td><img src=".github/todo-comment.png"></td>
+			<td><img src="hlchunk.png"></td>
+			<td><img src="todo-comment.png"></td>
 		</tr>
 	</tbody>
 </table>
