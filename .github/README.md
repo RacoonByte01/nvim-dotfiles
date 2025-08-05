@@ -33,7 +33,7 @@
 	<tbody>
 		<tr>
 			<td><img src="home.png"></td>
-			<td><img src=".github/ranger.png"></td>
+			<td><img src="ranger.png"></td>
 		</tr>
 		<tr>
 			<td><img src="hlchunk.png"></td>
