@@ -5,6 +5,7 @@ return {
 	-- PERF: dawdad
 	-- NOTE: dawdad
 	-- TEST: dawdad
+	-- name: comment
 	"folke/todo-comments.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = {

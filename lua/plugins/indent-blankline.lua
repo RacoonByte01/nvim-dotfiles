@@ -9,7 +9,7 @@ return {
 				-- 	{ fg = "#806d9c" },
 				-- 	{ fg = "#c21f30" },
 				-- },
-				style = "#7dcfff",
+				style = "#7FBBB3",
 				chars = {
 					horizontal_line = "─",
 					vertical_line = "│",
@@ -51,7 +51,7 @@ return {
 			},
 			line_num = {
 				enable = true,
-				style = "#7dcfff",
+				style = "#7FBBB3",
 			},
 			blank = {
 				enable = false,

@@ -1,50 +1,42 @@
+
 return {
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = { "folke/neodev.nvim", "mfussenegger/nvim-jdtls" },
-		config = function()
-			-- Setup All language
-			local lsp = require("lspconfig")
-			lsp.lua_ls.setup({})
-			lsp.jdtls.setup({})
-			lsp.intelephense.setup({
-				cmd = { 'env', 'HOME=/tmp', 'intelephense', '--stdio' };
-			})
-			-- lsp.bashls.setup({})
-			-- Get info about function
-			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-			-- Setup neovim lua configuration
-			require("neodev").setup()
-			-- require all language server modules 
-			-- rounded border on :LspInfo
-			require("lspconfig.ui.windows").default_options.border = "rounded"
-			-- Customization and appearance -----------------------------------------
-			-- change gutter diagnostic symbols
-			local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
 
-			for type, icon in pairs(signs) do
-				local hl = "DiagnosticSign" .. type
-				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-			end
+            -- Enable language servers
+            vim.lsp.enable({
+                "lua_ls",
+                "bashls",
+                "jsonls",
+                "ast_grep",
+                "pylsp",
+            })
 
-			vim.diagnostic.config({
-				virtual_text = {
-					source = "if_many",
-					prefix = "● ", -- Could be '●', '▎', 'x'
-				},
-				float = {
-					source = "always",
-				},
-				severity_sort = true,
-			})
+            -- Rounded borders (Neovim 0.11+)
+            vim.o.winborder = "rounded"
 
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-				border = "rounded",
-			})
+            -- LSP keymaps
+            vim.keymap.set("n", "K", function()
+                vim.lsp.buf.hover({ border = "rounded" })
+            end)
 
-			vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-				border = "rounded",
-			})
-		end,
-	},
+            vim.keymap.set("n", "<C-k>", function()
+                vim.lsp.buf.signature_help({ border = "rounded" })
+            end)
+
+            -- Diagnostics
+            vim.diagnostic.config({
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = " ",
+                        [vim.diagnostic.severity.WARN] = " ",
+                        [vim.diagnostic.severity.INFO] = "󰋼 ",
+                        [vim.diagnostic.severity.HINT] = "󰌵 ",
+                    },
+                },
+            })
+
+        end,
+    },
 }

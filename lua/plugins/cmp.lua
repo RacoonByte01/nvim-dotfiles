@@ -12,13 +12,13 @@ return {
 				"L3MON4D3/LuaSnip",
 				dependencies = { "rafamadriz/friendly-snippets" },
 			},
-			"onsails/lspkind-nvim",
-			{ "roobert/tailwindcss-colorizer-cmp.nvim", config = true }, -- tailwind color in suggesions
+			-- "onsails/lspkind-nvim",
+			-- { "roobert/tailwindcss-colorizer-cmp.nvim", config = true }, -- tailwind color in suggesions
 		},
 		event = "InsertEnter",
 		config = function()
 			local cmp = require("cmp")
-			local lspkind = require("lspkind")
+			-- local lspkind = require("lspkind")
 			local luasnip = require("luasnip")
 			-- html snippets in javascript and javascriptreact
 			-- luasnip.filetype_extend("javascriptreact", { "html", "jsdoc", "react-es7" })
@@ -36,15 +36,15 @@ return {
 			end
 			cmp.setup({
 				formatting = {
-					format = lspkind.cmp_format({
-						mode = "symbol_text",
-						ellipsis_char = "...",
-						maxwidth = 50,
-						before = function(entry, vim_item)
-							vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
-							return vim_item
-						end,
-					}),
+					-- format = lspkind.cmp_format({
+					-- 	mode = "symbol_text",
+					-- 	ellipsis_char = "...",
+					-- 	maxwidth = 50,
+					-- 	before = function(entry, vim_item)
+					-- 		vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+					-- 		return vim_item
+					-- 	end,
+					-- }),
 				},
 				snippet = {
 					expand = function(args)
